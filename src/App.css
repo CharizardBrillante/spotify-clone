@@ -141,3 +141,27 @@
   height: 5px !important;
   width: 25vw!important;
 }
+
+.left-player {
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+}
+.left-player img {
+  height: 8vh;
+}
+
+.right-player {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.volume-range {
+  width: 100px!important;
+  color: black!important;
+
+}

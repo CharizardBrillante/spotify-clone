@@ -5,7 +5,7 @@ import { selectSongAction } from '../redux/actions';
 const Main = () => {
     
     const [songs, setSongs] = useState([]);
-    useEffect(() => getSongs, [])
+    useEffect(() => getSongs(), [])
 
     const dispatch = useDispatch();
 
@@ -25,16 +25,15 @@ const Main = () => {
                     title={song.title}
                     imgUrl={song.album.cover_big}
                     author={song.artist.name}
-                    /* onClick={()=>{
+                    play={()=>{
+                        console.log('song dispatched');
                         dispatch(selectSongAction({
                             title: song.title,
                             author: song.artist.name,
                             cover: song.album.cover_big,
-                            duration: song.duration,
-                            isPlaying: false,
-                            favourite: false
+                            duration: song.duration
                         }))
-                    }} *//>
+                    }}/>
             ))}
             </div>
         </div>

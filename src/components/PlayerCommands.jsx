@@ -54,7 +54,7 @@ const PlayerCommands = () => {
             <div className="player-bar">
                 <span>{timerRunner}</span>
                 <ProgressBar now={now} max={duration}/>
-                <span>{displayDuration}</span>
+                <span>{duration === 1 ? '00:00' : displayDuration}</span>
             </div>
         </div>
     )
