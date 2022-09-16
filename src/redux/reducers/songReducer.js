@@ -5,7 +5,8 @@ const initialState = {
         title: '',
         author: '',
         cover: 'http://www.artnet.com/WebServices/images/ll00354lldUo0GFg9MECfDrCWvaHBOcCMqD/ad-reinhardt-black-square-(+another,-screenprint-on-paper;-2-works).jpg',
-        duration: 1
+        duration: 1,
+        preview: ''
     }
 }
 

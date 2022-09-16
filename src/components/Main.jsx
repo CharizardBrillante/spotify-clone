@@ -31,7 +31,8 @@ const Main = () => {
                             title: song.title,
                             author: song.artist.name,
                             cover: song.album.cover_big,
-                            duration: song.duration
+                            duration: song.duration,
+                            preview: song.preview
                         }))
                     }}/>
             ))}

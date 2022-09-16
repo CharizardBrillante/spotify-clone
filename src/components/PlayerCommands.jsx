@@ -11,9 +11,9 @@ const PlayerCommands = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [now, setNow] = useState(0);
     const [timerInterval, setTimerInterval] = useState(null);
-
     const song = useSelector((state) => state.song.selectedSong);
     const duration = song.duration;
+    const audio = new Audio(song.preview);
     let timerRunner = new Date(now * 1000).toISOString().slice(14, 19);
     let displayDuration = new Date(duration * 1000).toISOString().slice(14, 19);
 
@@ -30,7 +30,7 @@ const PlayerCommands = () => {
         setNow(0);
         setIsPlaying(false);
     }
-    console.log(now);
+    
     return (
         <div className="player-commands">
             <div className="player-buttons">
@@ -39,13 +39,14 @@ const PlayerCommands = () => {
                 {isPlaying ? 
                     <AiFillPauseCircle className="player-btn" size={40} color="white" onClick={()=>{
                         setIsPlaying(!isPlaying)
+                        audio.pause();
                         clearInterval(timerInterval);
                         console.log(isPlaying);
                     }}/> : 
                     <AiFillPlayCircle className="player-btn" size={40} color="white" onClick={()=>{
                         setIsPlaying(!isPlaying); 
+                        audio.play();
                         setTimeout(()=>timer(), 300);
-                        
                         console.log(isPlaying)
                     }}/>}
                 <BsFillSkipEndFill className="player-btn" size={30} color="grey"/>
